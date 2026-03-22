@@ -26,7 +26,7 @@ int main(){
     }
     return 0;
 }
-*/
+
 //BINARY SEARCH//
 #include<stdio.h>
 int main(){
@@ -64,6 +64,32 @@ int main(){
      if (found == 0){
             printf("NOT FOUND");
         }
+    return 0;
+}
+*/
+//INSERT AN ELEMEMNT IN AN ARRAY AT LAST//
+#include<stdio.h>
+int main(){
+    int n,key;
+    printf("ENTER NUMBER OF SIZE:");
+    scanf("%d",& n);
+    int arr[n];
+    printf("ENTER ELEMENT:\n");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+        
+    }
+    printf("ENTER THE ELEMENT YOU NEED TO ADD:");
+    scanf("%d",& key);
+    for(int i=0;i<n;i++){
+        printf("  %d \t",arr[i]);
+    }
+    printf("\n");
+    arr[n]=key;
+    printf("AFTER INSERTION:\n");
+    for(int i=0;i<=n;i++){
+        printf("  %d \t",arr[i]);
+    }
     return 0;
 }
 
