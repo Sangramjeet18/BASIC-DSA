@@ -1,5 +1,6 @@
+/*
 //LINEAR SEARCH//
-/*#include<stdio.h>
+#include<stdio.h>
 int main(){
     int n,key;
     printf("ENTER NUMBER OF SIZE:");
@@ -66,7 +67,7 @@ int main(){
         }
     return 0;
 }
-*/
+
 //INSERT AN ELEMEMNT IN AN ARRAY AT LAST//
 #include<stdio.h>
 int main(){
@@ -92,4 +93,32 @@ int main(){
     }
     return 0;
 }
-
+*/
+//INSERT AN ELEMEMNT IN BEGINNING OF AN ARRAY//
+#include<stdio.h>
+int main(){
+    int n,key;
+    printf("Enter size of the array:");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter elements:\n");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    printf("Enter element you want to add:");
+    scanf("%d",&key);
+    printf("BEFORE INSERTION:\n");
+    for(int i=0;i<n; i++){
+        printf("%d\t",arr[i]);
+    }
+    printf("\n");
+    for (int i=n;i>0;i--){
+        arr[i]=arr[i-1];
+}
+    arr[0]=key;
+    printf("AFTER INSERTION:\n");   
+    for(int i=0;i<=n;i++){
+        printf("%d\t",arr[i]);
+    }
+    return 0;
+}
