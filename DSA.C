@@ -93,7 +93,7 @@ int main(){
     }
     return 0;
 }
-*/
+
 //INSERT AN ELEMEMNT IN BEGINNING OF AN ARRAY//
 #include<stdio.h>
 int main(){
@@ -121,4 +121,38 @@ int main(){
         printf("%d\t",arr[i]);
     }
     return 0;
+}
+*/
+//INSERT AN ELEMEMNT IN ANY POSITION OF AN ARRAY//
+#include<stdio.h>
+int main(){
+    int n,key,pos;
+    printf("ENTER NUMBER OF SIZE:");
+    scanf("%d",& n);
+    int arr[n];
+    printf("ENTER ELEMENT:\n");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+        
+    }
+    printf("ENTER THE ELEMENT YOU NEED TO ADD:");
+    scanf("%d",& key);
+    printf("ENTER THE POSITION YOU NEED TO ADD:");
+    scanf("%d",& pos);  
+    printf("BEFORE INSERTION:\n");
+    for(int i=0;i<n;i++){
+        printf("  %d \t",arr[i]);
+    }
+    printf("\n");
+    for(int i=n;i>pos;i--){
+        arr[i]=arr[i-1];
+
+    }
+    arr[pos]=key;
+    printf("AFTER INSERTION:\n");
+    for(int i=0;i<=n;i++){  
+        printf("  %d \t",arr[i]);
+    }           
+    return 0;
+
 }
