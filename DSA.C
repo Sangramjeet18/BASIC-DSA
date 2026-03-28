@@ -122,7 +122,7 @@ int main(){
     }
     return 0;
 }
-*/
+
 //INSERT AN ELEMEMNT IN ANY POSITION OF AN ARRAY//
 #include<stdio.h>
 int main(){
@@ -156,3 +156,33 @@ int main(){
     return 0;
 
 }
+ */
+//DELETE EVERY ELEMENT IN AN ARRAY//
+#include <stdio.h>
+int main(){
+    int n,pos;
+    printf("ENTER THE SIZE OF AN ARRAY:");
+    scanf("%d",&n);
+    int arr[n];
+    printf("ENTER ELEMENT:\n");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    printf("ENTER THE POSITION YOU NEED TO DELETE:");
+    scanf("%d",& pos);
+    printf("BEFORE DELETATION:\n");
+    for (int i=0;i<n;i++){
+        printf("%d\t",arr[i]);
+
+    }
+    printf("\n");
+    for(int i=pos;i<n-1;i++){
+        arr[i]=arr[i+1];
+    }
+    printf("AFTER DELETION:\n");
+    for(int i=0;i<n-1;i++){
+        printf("%d\t",arr[i]);
+    }
+    return 0;
+
+}   
