@@ -222,7 +222,7 @@ int main(){
     return 0;
 
 }
-*/
+
 //MERGE TWO SORTED ARRAYS//
 #include<stdio.h>
 int main(){
@@ -256,6 +256,37 @@ int main(){
     while(j<p){
         printf("%d\t",arr1[j]);
         j++;
+    }
+    return 0;
+}
+*/
+//FREQUENCY OF EVERY ELEMENT IN AN ARRAY//
+#include<stdio.h>
+int main(){
+    int n;
+    printf("ENTER SIZE OF AN ARRAY:");
+    scanf("%d",&n);
+    int arr[n];
+    printf("ENTER ELEMENT:\n");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    int visited[n];
+    for(int i=0;i<n;i++){
+        visited[i]=0;
+    }
+    for(int i=0;i<n;i++){
+        if(visited[i]==1){
+            continue;
+        }
+        int count=1;
+        for(int j=i+1;j<n;j++){
+            if(arr[i]==arr[j]){
+                visited[j]=1;
+                count++;
+            }
+        }
+        printf("FREQUENCY OF %d IS %d\n",arr[i],count);
     }
     return 0;
 }
