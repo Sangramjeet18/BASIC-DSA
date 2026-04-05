@@ -156,7 +156,7 @@ int main(){
     return 0;
 
 }
- */
+ 
 //DELETE EVERY ELEMENT IN AN ARRAY//
 #include <stdio.h>
 int main(){
@@ -186,3 +186,40 @@ int main(){
     return 0;
 
 }   
+*/
+//Merge two arrays//
+#include<stdio.h>
+int main(){
+    int n,p,q;
+    printf("ENTER THE SIZE OF FIRST ARRAY:");
+    scanf("%d",&n);
+    int arr[n];
+    printf("ENTER ELEMENT:\n");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    
+    printf("ENTER THE SIZE OF SECOND ARRAY:");
+    scanf("%d",&p);
+    int arr1[p];
+    printf("ENTER ELEMENT:\n");
+    for(int i=0;i<p;i++){
+        scanf("%d",&arr1[i]);
+    }
+    
+    q=n+p;
+    int arr2[q];
+    for(int i=0;i<n;i++){
+        arr2[i]=arr[i];
+    }
+    for(int i=0;i<p;i++){
+        arr2[n+i]=arr1[i];
+    }
+    printf("MERGED ARRAY:\n");
+    for(int i=0;i<q;i++){
+        printf("%d\t",arr2[i]);
+    }   
+    return 0;
+
+}
+ 
