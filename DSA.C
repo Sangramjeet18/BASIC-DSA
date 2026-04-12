@@ -290,7 +290,7 @@ int main(){
     }
     return 0;
 }
-*/
+
 //Find the missing number in an array//
 #include<stdio.h>
 int main(){
@@ -331,6 +331,43 @@ int main(){
             printf("%d\t",i);
         }
 
+    }
+    return 0;
+}
+*/
+//REVERSE AN ARRAY using K steps//
+#include <stdio.h>
+void reverse(int arr[],int start,int end){
+    while(start<end){
+        int temp=arr[start];
+        arr[start]=arr[end];
+        arr[end]=temp;
+        start++;
+        end--;
+    }
+}
+int main(){
+    int n, k;
+    printf("ENTER SIZE OF THE ARRAY:");
+    scanf("%d",&n);     
+    int arr[n];
+    printf("ENTER ELEMENT:\n");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    printf("ENTER THE NUMBER OF STEPS:");
+    scanf("%d",&k); 
+    k=k%n; //to handle cases where k is greater than n
+    //REVERSE FIRST K ELEMENTS
+    reverse(arr, 0, k-1);
+    //REVERSE REMAINING ELEMENTS
+    reverse(arr, k, n-1);
+    //REVERSE THE ENTIRE ARRAY
+    reverse(arr, 0, n-1);
+    //PRINT THE REVERSED ARRAY
+    printf("THE REVERSED ARRAY IS:\n");
+    for(int i=0;i<n;i++){
+        printf("%d\t",arr[i]);
     }
     return 0;
 }
