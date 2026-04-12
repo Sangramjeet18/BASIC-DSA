@@ -371,7 +371,7 @@ int main(){
     }
     return 0;
 }
-*/
+
 //MOVE ZEROS TO THE END OF AN ARRAY//
 #include<stdio.h>
 int main(){
@@ -399,4 +399,34 @@ int main(){
         printf("%d\t",arr[i]);
     }
     return 0;
-}    
+}   
+
+//REMOVE DUPLICATE ELEMENTS FROM A SORTED ARRAY//
+#include<stdio.h>
+int main(){
+    int n;
+    printf("ENTER SIZE OF THE ARRAY:");
+    scanf("%d",&n);
+    int arr[n];
+    printf("ENTER ELEMENT:\n");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    int j=0; //index of the next unique element
+    for(int i=1;i<n;i++){
+        if(arr[i]==arr[j]){
+            continue; //skip duplicate element
+        }
+        else{
+            j++; //move to the next unique element
+            arr[j]=arr[i]; //update the next unique element
+        }
+    }
+    printf("ARRAY AFTER REMOVING DUPLICATES:\n");
+    for(int i=0;i<=j;i++){
+        printf("%d\t",arr[i]);
+    }
+    return 0;
+} 
+*/
+/
