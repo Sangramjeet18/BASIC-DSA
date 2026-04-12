@@ -259,7 +259,7 @@ int main(){
     }
     return 0;
 }
-*/
+
 //FREQUENCY OF EVERY ELEMENT IN AN ARRAY//
 #include<stdio.h>
 int main(){
@@ -287,6 +287,50 @@ int main(){
             }
         }
         printf("FREQUENCY OF %d IS %d\n",arr[i],count);
+    }
+    return 0;
+}
+*/
+//Find the missing number in an array//
+#include<stdio.h>
+int main(){
+    int n;
+    printf("ENTER SIZE OF THE ARRAY:");
+    scanf("%d",&n);
+    int arr[n];
+    printf("ENTER ELEMENT:\n");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    //Initialize min and max
+    int min=arr[0];
+    int max=arr[0];
+    for(int i=1;i<n;i++){
+        if(arr[i]<min){
+            min=arr[i];
+        }
+        if(arr[i]>max){
+            max=arr[i];
+        }
+
+    }
+    printf("MINIMUM NUMBER IS %d\n",min);
+    printf("MAXIMUM NUMBER IS %d\n",max);
+    printf("THE MISSING NUMBERS ARE:\n");
+    for(int i=min;i<=max;i++){
+        int found=0;
+        for(int j=0;j<n;j++){
+            if(arr[j]==i){
+                found=1;
+                break;
+
+            }
+
+        }
+        if(found==0){
+            printf("%d\t",i);
+        }
+
     }
     return 0;
 }
