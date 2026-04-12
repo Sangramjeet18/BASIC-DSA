@@ -429,4 +429,40 @@ int main(){
     return 0;
 } 
 */
-/
+//AN array is palindrome or not//
+#include<stdio.h>
+int main(){
+    int n, flag = 1;
+    printf("ENTER SIZE OF THE ARRAY: ");
+    scanf("%d", &n);
+
+    int arr[n], rev[n];
+
+    // Input array
+    printf("ENTER ELEMENTS:\n");
+    for(int i = 0; i < n; i++){
+        scanf("%d", &arr[i]);
+    }
+
+    // Create reverse array automatically
+    for(int i = 0; i < n; i++){
+        rev[i] = arr[n - 1 - i];
+    }
+
+    // Compare arr and rev
+    for(int i = 0; i < n; i++){
+        if(arr[i] != rev[i]){
+            flag = 0;
+            break;
+        }
+    }
+
+    if(flag == 1)
+        printf("The array is a palindrome.\n");
+    else
+        printf("The array is NOT a palindrome.\n");
+
+    return 0;
+}
+
+
