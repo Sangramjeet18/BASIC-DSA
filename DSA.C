@@ -334,7 +334,7 @@ int main(){
     }
     return 0;
 }
-*/
+
 //REVERSE AN ARRAY using K steps//
 #include <stdio.h>
 void reverse(int arr[],int start,int end){
@@ -371,3 +371,32 @@ int main(){
     }
     return 0;
 }
+*/
+//MOVE ZEROS TO THE END OF AN ARRAY//
+#include<stdio.h>
+int main(){
+    int n;
+    printf("ENTER SIZE OF THE ARRAY:");
+    scanf("%d",&n);
+    int arr[n];
+    printf("ENTER ELEMENT:\n");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    int count=0; //count of non-zero elements
+    for(int i=0;i<n;i++){
+        if(arr[i]!=0){
+            arr[count]=arr[i];
+            count++;
+        }
+    }
+    while(count<n){
+        arr[count]=0;
+        count++;
+    }
+    printf("ARRAY AFTER MOVING ZEROS TO THE END:\n");
+    for(int i=0;i<n;i++){
+        printf("%d\t",arr[i]);
+    }
+    return 0;
+}    
