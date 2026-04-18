@@ -1,4 +1,4 @@
-#include<stdio.h>
+/*#include<stdio.h>
 #include<stdlib.h>
 int *stack;
 int top=-1;
@@ -78,6 +78,72 @@ int main(){
         }
 
     }
+    return 0;
+}
+*/
+//Check Whethr an Expression is Balanced or Not//
+#include<stdio.h>
+#include<stdlib.h>
+char *stack;
+int top=-1;
+int max;
+//PUSH OPERATION//
+void push(char value){
+    if(top==max-1){
+        printf("STACK OVERFLOW\n");
+
+    }
+    else{
+        top++;
+        stack[top]=value;
+
+    }
+}
+//POP OPERATION//
+char pop(){
+    if(top==-1){
+        printf("STACK UNDERFLOW\n");
+        return '\0';
+    }
+    else{
+        char value=stack[top];
+        top--;
+        return value;
+    }
+}
+int isBalanced(char *exp){
+    for(int i=0;exp[i]!='\0';i++){
+        char ch=exp[i];
+        if(ch=='(' || ch=='{' || ch=='['){
+            push(ch);
+        }
+        else if(ch==')' || ch=='}' || ch==']'){
+            char topChar=pop();
+            if((ch==')' && topChar!='(') || (ch=='}' && topChar!='{') || (ch==']' && topChar!='[')){
+                return 0;
+            }
+        }
+    }
+    return (top==-1);
+}
+int main(){
+    char exp[100];
+    printf("ENTER THE SIZE OF THE STACK:");
+    scanf("%d",&max);
+    stack=(char*)malloc(max*sizeof(char));
+    if(stack==NULL){
+        printf("MEMORY ALLOCATION FAILED\n");
+        return 1;
+    }
+    printf("ENTER AN EXPRESSION:");
+    scanf("%s",exp);
+    if(isBalanced(exp)){
+        printf("EXPRESSION IS BALANCED\n");
+    }
+    else{
+        printf("EXPRESSION IS NOT BALANCED\n");
+    }
+    free(stack);
     return 0;
 }
 
