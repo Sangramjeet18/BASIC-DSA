@@ -428,7 +428,7 @@ int main(){
     }
     return 0;
 } 
-*/
+
 //AN array is palindrome or not//
 #include<stdio.h>
 int main(){
@@ -464,5 +464,32 @@ int main(){
 
     return 0;
 }
-
-
+*/
+//REMOVE DUPICATE ELEMENTS FROM AN UNSORTED ARRAY//
+#include <stdio.h>
+int main(){
+    int n;
+    printf("ENTER THE SIZE OF THE ARRAY:");
+    scanf("%d",&n);
+    int arr[n];
+    printf("ENTER ELEMENT:\n");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    int visited [n];
+    for(int i=0;i<n;i++){
+        visited[i]=0;
+    }
+    printf("ARRAY AFTER REMOVING DUPLICATES:\n");
+    for(int i=0;i<n;i++){
+        if(visited[i]==0){
+            printf("%d\t",arr[i]);
+            for(int j=i+1;j<n;j++){
+                if(arr[i]==arr[j]){
+                    visited[j]=1;
+                }
+            }
+        }
+    }
+    return 0;
+}
