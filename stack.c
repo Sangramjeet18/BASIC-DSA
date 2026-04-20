@@ -80,7 +80,7 @@ int main(){
     }
     return 0;
 }
-*/
+
 //Check Whethr an Expression is Balanced or Not//
 #include<stdio.h>
 #include<stdlib.h>
@@ -146,4 +146,100 @@ int main(){
     free(stack);
     return 0;
 }
+*/
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
 
+#define MAX 100
+
+char stack[MAX];
+int top = -1;
+
+// PUSH
+void push(char x) {
+    stack[++top] = x;
+}
+
+// POP
+char pop() {
+    if (top == -1)
+        return -1;
+    else
+        return stack[top--];
+}
+
+// PRIORITY
+int priority(char x) {
+    if (x == '(')
+        return 0;
+    if (x == '+' || x == '-')
+        return 1;
+    if (x == '*' || x == '/')
+        return 2;
+    return 3;
+}
+
+// REVERSE STRING
+void reverse(char exp[]) {
+    int i, j;
+    char temp;
+    for (i = 0, j = strlen(exp) - 1; i < j; i++, j--) {
+        temp = exp[i];
+        exp[i] = exp[j];
+        exp[j] = temp;
+    }
+}
+
+// MAIN FUNCTION
+int main() {
+    char infix[MAX], postfix[MAX], prefix[MAX];
+    int i, j = 0;
+
+    printf("Enter Infix Expression: ");
+    scanf("%s", infix);
+
+    // Step 1: Reverse
+    reverse(infix);
+
+    // Step 2: Replace brackets
+    for (i = 0; infix[i]; i++) {
+        if (infix[i] == '(')
+            infix[i] = ')';
+        else if (infix[i] == ')')
+            infix[i] = '(';
+    }
+
+    // Step 3: Infix → Postfix
+    for (i = 0; infix[i]; i++) {
+        if (isalnum(infix[i])) {
+            postfix[j++] = infix[i];
+        }
+        else if (infix[i] == '(') {
+            push(infix[i]);
+        }
+        else if (infix[i] == ')') {
+            while ((stack[top]) != '(')
+                postfix[j++] = pop();
+            pop(); // remove '('
+        }
+        else {
+            while (priority(stack[top]) >= priority(infix[i]))
+                postfix[j++] = pop();
+            push(infix[i]);
+        }
+    }
+
+    while (top != -1)
+        postfix[j++] = pop();
+
+    postfix[j] = '\0';
+
+    // Step 4: Reverse postfix → prefix
+    strcpy(prefix, postfix);
+    reverse(prefix);
+
+    printf("Prefix Expression: %s\n", prefix);
+
+    return 0;
+}
