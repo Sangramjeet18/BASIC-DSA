@@ -158,15 +158,18 @@ int top = -1;
 
 // PUSH
 void push(char x) {
+    if (top == MAX - 1) {
+        printf("Stack Overflow\n");
+        return;
+    }
     stack[++top] = x;
 }
 
 // POP
 char pop() {
     if (top == -1)
-        return -1;
-    else
-        return stack[top--];
+        return '\0';
+    return stack[top--];
 }
 
 // PRIORITY
@@ -177,7 +180,9 @@ int priority(char x) {
         return 1;
     if (x == '*' || x == '/')
         return 2;
-    return 3;
+    if (x == '^')
+        return 3;
+    return -1;
 }
 
 // REVERSE STRING
@@ -191,7 +196,6 @@ void reverse(char exp[]) {
     }
 }
 
-// MAIN FUNCTION
 int main() {
     char infix[MAX], postfix[MAX], prefix[MAX];
     int i, j = 0;
@@ -212,19 +216,23 @@ int main() {
 
     // Step 3: Infix → Postfix
     for (i = 0; infix[i]; i++) {
+
         if (isalnum(infix[i])) {
             postfix[j++] = infix[i];
         }
+
         else if (infix[i] == '(') {
             push(infix[i]);
         }
+
         else if (infix[i] == ')') {
-            while ((stack[top]) != '(')
+            while (top != -1 && stack[top] != '(')
                 postfix[j++] = pop();
-            pop(); // remove '('
+            pop();
         }
+
         else {
-            while (priority(stack[top]) >= priority(infix[i]))
+            while (top != -1 && priority(stack[top]) > priority(infix[i]))
                 postfix[j++] = pop();
             push(infix[i]);
         }
