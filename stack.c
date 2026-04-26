@@ -334,7 +334,7 @@ int stack[MAX];
 int top=-1;
 void push(int x){
     if(top==MAX-1){
-        Printf("STACK OVERFLOW\n");
+        printf("STACK OVERFLOW\n");
         return;
     }
     stack[++top]=x;
