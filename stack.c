@@ -146,7 +146,7 @@ int main(){
     free(stack);
     return 0;
 }
-*/
+
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
@@ -251,3 +251,77 @@ int main() {
 
     return 0;
 }
+*/
+//INFIX TO POSTFIX //
+#include<stdio.h>
+#include<ctype.h>
+#include<string.h>
+#define MAX 100
+char stack[100];
+int top=-1;
+void push(int x){
+    if (top==MAX-1){
+        printf("STACK OVERFLOW\n");
+        return;
+    }
+    stack[++top]=x;
+}
+int pop(){
+    if(top==-1){
+        printf("STACK UNDERFLOW\n");
+        return -1;
+    }
+    return stack [top--];
+}
+int priority(char x){
+    if(x=='('){
+        return 0;
+    }
+    if(x=='+'||x=='-'){
+        return 1;
+    }
+    if(x=='*'||x=='/'){
+        return 2;
+    }
+    if(x=='^'){
+        return 3;
+    }
+    return -1;
+}
+int main(){
+    int i,j=0;
+    char infix[MAX],postfix[MAX];
+    printf("ENTER INFIX EXPRESSION:");
+    scanf("%s",infix);
+    for(i=0;infix[i];i++){
+        if(isalnum(infix[i])){
+            postfix[j++]=infix[i];
+        }
+        else if(infix[i]=='('){
+            push(infix[i]);
+        }
+        else if(infix[i]==')'){
+            while(top!=-1&& stack[top]!='('){
+                postfix[j++]=pop();
+
+            }
+            pop();
+
+        }
+        else{
+            while(top!=-1 && priority(stack[top])>priority(infix[i])){
+                postfix[j++]=pop();
+            }
+            push(infix[i]);
+        }
+
+        }
+    while(top!=-1){
+        postfix[j++]=pop();
+    }
+    postfix[j]='\0';
+    printf("POSTFIX EXPRESSION:%s\n",postfix);
+    return 0;
+    
+}
+
