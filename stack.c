@@ -251,7 +251,7 @@ int main() {
 
     return 0;
 }
-*/
+
 //INFIX TO POSTFIX //
 #include<stdio.h>
 #include<ctype.h>
@@ -322,6 +322,64 @@ int main(){
     postfix[j]='\0';
     printf("POSTFIX EXPRESSION:%s\n",postfix);
     return 0;
-    
-}
 
+}
+*/
+// Evaluate a given Postfix Expression using stack.
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#define MAX 100
+int stack[MAX];
+int top=-1;
+void push(int x){
+    if(top==MAX-1){
+        Printf("STACK OVERFLOW\n");
+        return;
+    }
+    stack[++top]=x;
+}
+int pop(){
+    if(top==-1){
+        Printf("STACK UNDERFLOW\n");
+        return -1;
+    }
+    return stack [top--];
+}
+int main(){
+    char postfix[MAX];
+    int i, op1, op2, result;
+    printf("ENTER POSTFIX EXPRESSION:");
+    scanf("%s",postfix);
+    for(i=0;postfix[i];i++){
+        if(isdigit(postfix[i])){
+            push(postfix[i]-'0');
+        }
+        else{
+            op2=pop();
+            op1=pop();
+            switch(postfix[i]){
+                case '+':
+                    result=op1+op2;
+                    break;
+                case '-':
+                    result=op1-op2;
+                    break;
+                case '*':
+                    result=op1*op2;
+                    break;
+                case '/':
+                    result=op1/op2;
+                    break;
+                default:
+                    printf("INVALID OPERATOR\n");
+                    return 1;
+
+            }
+            push(result);
+        }
+    }
+    printf("RESULT:%d\n",pop());
+    return 0;
+
+}
