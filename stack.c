@@ -341,7 +341,7 @@ void push(int x){
 }
 int pop(){
     if(top==-1){
-        Printf("STACK UNDERFLOW\n");
+        printf("STACK UNDERFLOW\n");
         return -1;
     }
     return stack [top--];
@@ -350,7 +350,7 @@ int main(){
     char postfix[MAX];
     int i, op1, op2, result;
     printf("ENTER POSTFIX EXPRESSION:");
-    scanf("%s",postfix);
+    fgets(postfix, MAX, stdin);
     for(i=0;postfix[i];i++){
         if(isdigit(postfix[i])){
             push(postfix[i]-'0');
