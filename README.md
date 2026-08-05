@@ -1,191 +1,357 @@
-<div align="center">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BASIC-DSA | Daily C & C++ DSA Solutions</title>
 
-# 🧠 BASIC DSA
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-### Data Structures & Algorithms for Beginners
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="70">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="70">
+body{
+background:#0f172a;
+color:#fff;
+overflow-x:hidden;
+}
+
+header{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
+}
+
+.hero h1{
+font-size:65px;
+margin-bottom:20px;
+}
+
+.hero h1 span{
+color:#38bdf8;
+}
+
+.hero p{
+font-size:22px;
+color:#dbeafe;
+max-width:700px;
+margin:auto;
+line-height:1.7;
+}
+
+.buttons{
+margin-top:40px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 35px;
+margin:10px;
+text-decoration:none;
+font-weight:600;
+border-radius:50px;
+transition:.4s;
+}
+
+.primary{
+background:#38bdf8;
+color:#000;
+}
+
+.primary:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(56,189,248,.4);
+}
+
+.secondary{
+border:2px solid #38bdf8;
+color:#fff;
+}
+
+.secondary:hover{
+background:#38bdf8;
+color:#000;
+}
+
+section{
+padding:80px 10%;
+}
+
+.title{
+text-align:center;
+font-size:40px;
+margin-bottom:50px;
+color:#38bdf8;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:#1e293b;
+padding:30px;
+border-radius:15px;
+transition:.4s;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.card:hover{
+transform:translateY(-10px);
+background:#334155;
+}
+
+.card h3{
+margin-bottom:15px;
+color:#38bdf8;
+}
+
+.card p{
+color:#cbd5e1;
+line-height:1.7;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.stat{
+background:#1e293b;
+padding:40px;
+text-align:center;
+border-radius:15px;
+}
+
+.stat h2{
+font-size:45px;
+color:#38bdf8;
+}
+
+footer{
+text-align:center;
+padding:40px;
+background:#020617;
+color:#94a3b8;
+}
+
+footer a{
+color:#38bdf8;
+text-decoration:none;
+}
+
+.code{
+background:#020617;
+padding:20px;
+border-radius:12px;
+margin-top:20px;
+font-family:monospace;
+color:#38bdf8;
+overflow:auto;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.title{
+font-size:32px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="hero">
+
+<h1>🚀 BASIC <span>DSA</span></h1>
+
+<p>
+A growing collection of Data Structures & Algorithms solutions written in
+<strong>C</strong> and <strong>C++</strong>.
+I solve and upload coding problems daily to improve problem-solving,
+coding skills, and interview preparation.
+</p>
+
+<div class="buttons">
+
+<a href="https://github.com/Sangramjeet18/BASIC-DSA" class="btn primary">⭐ View Repository</a>
+
+<a href="#about" class="btn secondary">Learn More</a>
+
+</div>
+
+</div>
+
+</header>
+
+<section id="about">
+
+<h2 class="title">About This Repository</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>💻 Daily Coding</h3>
+<p>
+Daily solutions to DSA problems from different coding platforms with clean
+and optimized implementations.
+</p>
+</div>
+
+<div class="card">
+<h3>📚 C & C++</h3>
+<p>
+Every solution is written using standard C or modern C++ for better
+understanding and interview preparation.
+</p>
+</div>
+
+<div class="card">
+<h3>🎯 Interview Ready</h3>
+<p>
+Covers arrays, strings, linked lists, trees, graphs, recursion,
+dynamic programming, greedy algorithms and much more.
+</p>
+</div>
+
+<div class="card">
+<h3>📈 Consistency</h3>
+<p>
+The main goal is continuous learning by solving and uploading DSA
+questions every single day.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">Repository Highlights</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h2>100+</h2>
+<p>Problems (Growing)</p>
+</div>
+
+<div class="stat">
+<h2>C</h2>
+<p>Programming Language</p>
+</div>
+
+<div class="stat">
+<h2>C++</h2>
+<p>Programming Language</p>
+</div>
+
+<div class="stat">
+<h2>∞</h2>
+<p>Learning Never Stops</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">Folder Structure</h2>
+
+<div class="code">
+BASIC-DSA/<br>
+├── Arrays/<br>
+├── Strings/<br>
+├── Linked List/<br>
+├── Stack/<br>
+├── Queue/<br>
+├── Trees/<br>
+├── Graph/<br>
+├── Dynamic Programming/<br>
+├── Recursion/<br>
+├── Sorting/<br>
+└── README.md
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">Why This Repository?</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>✔ Clean Code</h3>
+<p>Easy-to-read implementations with proper formatting.</p>
+</div>
+
+<div class="card">
+<h3>✔ Beginner Friendly</h3>
+<p>Simple logic for understanding core DSA concepts.</p>
+</div>
+
+<div class="card">
+<h3>✔ Regular Updates</h3>
+<p>New coding problems are added frequently.</p>
+</div>
+
+<div class="card">
+<h3>✔ Open Source</h3>
+<p>Feel free to explore, fork, star and learn.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>⭐ Thanks for visiting!</h2>
+
+<p>
+If you found this repository useful, don't forget to
+<strong>Star ⭐ the repository</strong> and follow my coding journey.
+</p>
+
+<br>
+
+<a href="https://github.com/Sangramjeet18/BASIC-DSA">
+github.com/Sangramjeet18/BASIC-DSA
+</a>
 
 <br><br>
 
-<p>
-A comprehensive collection of Data Structures and Algorithms problems, solutions,
-and implementations designed to strengthen problem-solving and coding interview skills.
-</p>
+<p>Made with ❤️ using HTML & CSS</p>
 
-</div>
+</footer>
 
----
-
-## 📖 About
-
-This repository contains implementations and solutions for fundamental **Data Structures and Algorithms (DSA)** concepts. It is designed to help beginners build a strong foundation in algorithmic thinking, problem-solving, and coding interview preparation.
-
-The repository covers essential DSA topics such as arrays, strings, linked lists, stacks, queues, trees, graphs, sorting algorithms, searching techniques, recursion, and dynamic programming. These topics are commonly used in technical interviews and competitive programming. :contentReference[oaicite:0]{index=0}
-
----
-
-## ✨ Features
-
-✔️ Beginner-Friendly DSA Implementations  
-✔️ Well-Structured Solutions  
-✔️ Interview Preparation Material  
-✔️ Competitive Programming Practice  
-✔️ Optimized Algorithms  
-✔️ Problem-Solving Approaches  
-✔️ Multiple DSA Topics Covered  
-✔️ Clean and Readable Code
-
----
-
-## 🛠️ Topics Covered
-
-### 📦 Data Structures
-
-- Arrays
-- Strings
-- Linked Lists
-- Stacks
-- Queues
-- Hash Tables
-- Trees
-- Graphs
-
-### ⚡ Algorithms
-
-- Searching Algorithms
-- Sorting Algorithms
-- Recursion
-- Backtracking
-- Dynamic Programming
-- Greedy Algorithms
-- Graph Algorithms
-- Binary Search
-
-These are among the most common categories used in DSA learning and interview preparation. :contentReference[oaicite:1]{index=1}
-
----
-
-## 💻 Technologies Used
-
-<p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="70">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="70">
-</p>
-
-| Technology | Purpose |
-|------------|---------|
-| C++ | DSA Implementations |
-| Python | Problem Solving |
-| Git | Version Control |
-| GitHub | Project Hosting |
-
----
-
-## 🎯 Learning Objectives
-
-This project helps in:
-
-- Strengthening Problem-Solving Skills
-- Understanding Time & Space Complexity
-- Preparing for Coding Interviews
-- Practicing Competitive Programming
-- Learning Efficient Data Structures
-- Developing Algorithmic Thinking
-
----
-
-## 🔄 DSA Learning Roadmap
-
-```text
-Programming Basics
-         ↓
-Arrays & Strings
-         ↓
-Linked Lists
-         ↓
-Stacks & Queues
-         ↓
-Trees & Graphs
-         ↓
-Searching & Sorting
-         ↓
-Recursion
-         ↓
-Dynamic Programming
-         ↓
-Advanced Problem Solving
-```
-
----
-
-## 📂 Project Structure
-
-```bash
-BASIC-DSA/
-│
-├── Arrays/
-├── Strings/
-├── LinkedLists/
-├── Stacks/
-├── Queues/
-├── Trees/
-├── Graphs/
-├── Sorting/
-├── Searching/
-├── DynamicProgramming/
-│
-└── README.md
-```
-
----
-
-## 🚀 Future Enhancements
-
-- More Interview Questions
-- LeetCode Solutions
-- GeeksforGeeks Problems
-- Competitive Programming Templates
-- Advanced Graph Algorithms
-- Segment Trees & Tries
-- Detailed Explanations for Each Solution
-
----
-
-## 🏷️ GitHub Topics
-
-```text
-dsa
-data-structures
-algorithms
-cpp
-python
-competitive-programming
-leetcode
-coding-interview
-problem-solving
-dynamic-programming
-graphs
-trees
-sorting
-searching
-```
-
----
-
-## 📈 Why Learn DSA?
-
-Data Structures and Algorithms are the backbone of software engineering and are heavily tested in technical interviews. A strong understanding of DSA improves coding efficiency, problem-solving ability, and overall programming skills. :contentReference[oaicite:2]{index=2}
-
----
-
-<div align="center">
-
-### ⭐ Star this repository if it helps you in your DSA journey!
-
-### 🚀 Keep Learning • Keep Coding • Keep Growing
-
-Made with ❤️ by <b>Sangramjeet</b>
-
-</div>
+</body>
+</html>
