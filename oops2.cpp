@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 //Question 1;
-class simpleinterest{
+/*class simpleinterest{
 private:
     float principal,time;
 public:
@@ -20,5 +20,32 @@ int main(){
     cin>>t;
     simpleinterest obj(p,t);
     cout<<"SIMPLE INTEREST:"<<obj.calculate()<<endl;
+    return 0;
+}
+ */
+class car{
+public:
+    int price;
+    string brand;
+    void input(){
+        cout<<"ENTER PRICE:"<<endl;
+        cin>>price;
+        cout<<"ENTER CAR NAME:"<<endl;
+        cin>>brand;
+        
+    }
+    void display(){
+        cout<<"___CAR DETAILS___"<<endl;
+        cout<<"THE PRICE OF THE CAR IS:"<<price<<endl;
+        cout<<"THE BRAND NAME IS:"<<brand<<endl;
+
+
+    }
+
+};
+int main(){
+    car c;
+    c.input();
+    c.display();
     return 0;
 }
