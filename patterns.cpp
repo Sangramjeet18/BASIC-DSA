@@ -25,7 +25,7 @@ int triangle1(int n){
         cout<<endl;
     }
 }
- 
+ */
 //TRIANGLE INVERTED
 int triangle2(int n){
     for(int i=0;i<n;i++){
@@ -61,6 +61,7 @@ int main(){
     cout<<"ENTER:"<<endl;
     cin>>x;
     triangle3(x);
-    return 0 ;
+    return 0;
 }
-*/
+    
+

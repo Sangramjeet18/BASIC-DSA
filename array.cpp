@@ -27,7 +27,7 @@ int main(){
     return 0;
 
 }
-*/
+
 //LINEAR SEARCH
 int main(){
     int n,x;
@@ -54,3 +54,6 @@ int main(){
     return 0;
 
 }
+*/
+//REVERSE AN ARRAY
+    
