@@ -22,7 +22,7 @@ int main(){
     cout<<"SIMPLE INTEREST:"<<obj.calculate()<<endl;
     return 0;
 }
- */
+ 
 class car{
 public:
     int price;
@@ -48,4 +48,34 @@ int main(){
     c.input();
     c.display();
     return 0;
+}
+    */
+class bankaccount{
+private:
+    int accountnumber,balance;
+    string accountholdername;   
+public:
+    void input(){
+        cout<<"ENTER ACCOUNT NUMBER:"<<endl;
+        cin>>accountnumber;
+        cout<<"ENTER BALANCE:"<<endl;
+        cin>>balance;
+        cout<<"ENTER ACCOUNT HOLDER NAME:"<<endl;
+        cin>>accountholdername; 
+    }
+    void display(){
+        cout<<"ACCOUNT NUMBER:"<<accountnumber<<endl;
+        
+        cout<<"BALANCE:"<<balance<<endl;
+        
+        cout<<"ACCOUNT HOLDER NAME:"<<accountholdername<<endl;
+        
+    }     
+};   
+int main(){
+    bankaccount obj;
+    obj.input();
+    obj.display();
+
+    
 }
