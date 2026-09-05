@@ -49,7 +49,7 @@ int main(){
     c.display();
     return 0;
 }
-    */
+    
 class bankaccount{
 private:
     int accountnumber,balance;
@@ -78,4 +78,61 @@ int main(){
     obj.display();
 
     
+}
+*/
+class student{
+private:
+    string name;
+    int student_ID;
+    float marks1,marks2,marks3;
+    int average;
+public:
+    void acceptdetails(){
+        cout<<"ENTER NAME:"<<endl;
+        cin>>name;
+        cout<<"ENTER STUDENT ID:"<<endl;
+        cin>>student_ID;
+        cout<<"MARKS1:"<<endl;
+        cin>>marks1;
+        cout<<"MARKS2:"<<endl;
+        cin>>marks2;
+        cout<<"MARKS3:"<<endl;
+        cin>>marks3;
+       
+    }   
+    void display(){
+        cout<<"NAME OF THE STUDENT IS :"<<name<<endl;
+        cout<<"STUDENT ID OF THE STUDENT IS "<<student_ID<<endl;
+        cout<<"MARKS1:""\t"<<marks1<<endl<<"MARKS2:""\t"<<marks2<<endl<<"MARKS3:""\t"<<marks3<<endl;
+        cout<<"THE AVERAGE WILL IS:"<<(marks1+marks2+marks3)/3<<endl;
+
+
+    } 
+};
+int main(){
+    int n;
+    cout<<"ENTER NUMBER OF STUDENTS:"<<endl;
+    cin>>n;
+    student *s=new student[n];
+    cout << "\nEnter Student Details:\n";
+    for (int i = 0; i < n; i++)
+    {
+        cout << "\nStudent " << i + 1 << ":";
+        s[i].acceptdetails();
+    }
+
+    // Display details
+    cout << "\n\nStudent Information:\n";
+    for (int i = 0; i < n; i++)
+    {
+        s[i].display();
+    }
+
+    // Release dynamically allocated memory
+    delete[] s;
+
+    cout << "\n\nMemory released successfully.";
+
+    return 0;
+
 }
