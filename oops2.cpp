@@ -79,7 +79,17 @@ int main(){
 
     
 }
-*/
+//
+
+Write a C++ program for a Student class in which student objects are
+ created dynamically using the new operator. 
+ Ask the user for the number of students,
+ dynamically allocate memory for that many student objects, 
+ accept student details and marks, calculate their percentage,
+ display their information, and finally release the dynamically
+  allocated memory using the delete[] operator. 
+//    
+
 class student{
 private:
     string name;
@@ -136,3 +146,7 @@ int main(){
     return 0;
 
 }
+ */
+class librarybook{
+private:    
+};
