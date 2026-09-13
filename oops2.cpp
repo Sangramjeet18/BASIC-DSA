@@ -272,5 +272,6 @@ int main(){
         h[i].display();
         cout<<"\n";
     }
+    hospital::totaldisplay();
     return 0;
 }
