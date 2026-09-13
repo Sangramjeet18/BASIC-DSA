@@ -146,7 +146,7 @@ int main(){
     return 0;
 
 }
- */
+ 
 class librarybook{
 private:  
     int ID,price;
@@ -216,4 +216,61 @@ int main(){
     books[0].returnbook();
     return 0;
 
+}
+ */
+class hospital{
+private:
+    int id,age,room;
+    string name,disease;
+    static int total;
+
+public:
+    void input(){
+        cout<<"ENTER PATIENT NAME:"<<endl;
+        cin>>name;
+        cout<<"ENTER ID:"<<endl;
+        cin>>id;
+        cout<<"ENTER AGE:"<<endl;
+        cin>>age;
+        cout<<"ENTER ROOM:"<<endl;
+        cin>>room;
+        cout<<"ENTER DISEASE NAME:"<<endl;
+        cin>>disease;
+        total++;
+    }    
+    void display(){
+        cout<<" PATIENT NAME:"<<name<<endl;
+        
+        cout<<"ID:"<<id<<endl;
+        
+        cout<<"AGE:"<<age<<endl;
+        
+        cout<<"ROOM:"<<room<<endl;
+       
+        cout<<" DISEASE NAME:"<<disease<<endl;
+    
+
+    }
+    static void totaldisplay(){
+        cout<<"TOTAL MEMBER"<<total;
+    }
+};   
+int hospital::total=0;
+int main(){
+    int n;
+    cout<<"ENTER NUMBER OF PATIENT:"<<endl;
+    cin>>n;
+    hospital h[100];
+     for (int i=0;i<n;i++){
+        cout<<"PATIENT"<<i+1<<endl;
+        h[i].input();
+    }
+    cout<<"\n";
+    cout<<"SEE PATIENT INFORMATION"<<endl;
+     for (int i=0;i<n;i++){
+        cout<<"PATIENT"<<i+1<<endl;
+        h[i].display();
+        cout<<"\n";
+    }
+    return 0;
 }
