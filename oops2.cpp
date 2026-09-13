@@ -148,5 +148,72 @@ int main(){
 }
  */
 class librarybook{
-private:    
+private:  
+    int ID,price;
+    string author;
+    string title;
+    bool availability; 
+    static int totalBooks; 
+
+public:
+    void input(){
+        cout<<"ENTER BOOK ID:"<<endl;
+        cin>>ID;
+        cout<<"ENTER TITLE:"<<endl;
+        cin>>title;
+        cout<<"ENTER AUTHOR NAME:"<<endl;
+        cin>>author;
+        cout<<"ENTER PRICE:"<<endl;
+        cin>>price;
+        availability=true;
+        totalBooks++;
+    }
+    void display(){
+        cout<<"BOOK ID:"<<ID<<endl;
+        cout<<"TITLE:"<<title<<endl;
+        
+        cout<<"ENTER AUTHOR NAME:"<<author<<endl;
+        
+        cout<<"ENTER PRICE:"<<price<<endl;
+        
+
+    }
+    void issuebook(){
+        if(availability==true){
+            cout<<"Book issued successfully"<<endl;
+        }
+        else{
+            cout<<"Book already in used"<<endl;
+        }
+    }
+    void returnbook(){
+        availability=true;
+        cout<<"RETURNED SUCCESSFULLY"<<endl;
+    }
+    static void totaldisplay(){
+        cout<<"TOTAL BOOK:"<<totalBooks<<endl;
+    }
 };
+int librarybook::totalBooks=0;
+int main(){
+    int n;
+    cout<<"ENTER NUMBER OF BOOKS:"<<endl;
+    cin>>n;
+    librarybook books[100];
+    for (int i=0;i<n;i++){
+        cout<<"BOOK"<<i+1<<endl;
+        books[i].input();
+    }
+    cout<<"\n";
+    cout<<"SEE BOOK INFORMATION"<<endl;
+     for (int i=0;i<n;i++){
+        cout<<"BOOK"<<i+1<<endl;
+        books[i].display();
+        cout<<"\n";
+    }
+    librarybook::totaldisplay();
+    books[0].issuebook();
+    books[0].returnbook();
+    return 0;
+
+}
