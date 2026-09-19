@@ -217,7 +217,7 @@ int main(){
     return 0;
 
 }
- */
+ 
 class hospital{
 private:
     int id,age,room;
@@ -274,4 +274,65 @@ int main(){
     }
     hospital::totaldisplay();
     return 0;
+}
+    */
+//ASSIGNMENT 4
+
+#include<iostream>
+using namespace std;
+class bankaccount{
+private:    
+    int accountno;
+    string name;
+    float balance;
+public:
+    void input(){
+        cout<<"ENTER ACCOUNT NUMBER:"<<endl;
+        cin>>accountno;
+        cout<<"ENTER BANK NAME:"<<endl;
+        cin>>name;
+        cout<<"ENTER BALANCE:"<<endl;
+        cin>>balance;
+    }
+    void display(){
+        cout<<"ACCOUNT NUMBER:"<<accountno<<endl;
+        cout<<"BANK NAME:"<<name<<endl;
+        cout<<"BALANCE:"<<balance<<endl;
+    }
+    friend void transferamount(bankaccount &,bankaccount &,float);    
+};
+void transferamount(bankaccount &from,bankaccount &to,float amount){
+    if(from.balance>=amount){
+        from.balance-=amount;
+        to.balance+=amount;
+        cout<<"TRANSFER SUCCESSFUL\n";
+    }
+    else{
+        cout<<"INSUFFICIENT BALANCE"<<endl;
+    }
+}
+int main(){
+    bankaccount acc1, acc2;
+    double amount;
+    cout<<"ENTER DETAILS :"<<endl;
+    acc1.input();
+    cout<<"ENTER DETAILS OF 2ND ACCOUNT:"<<endl;
+    acc2.input();
+    cout<<"BEFORE TANSFER:"<<endl;
+    cout<<"ACCOUNT 1 DETAILS :"<<endl;
+    acc1.display();
+    cout<<"ACCOUNT 2 DETAILS :"<<endl;
+    acc2.display();
+    cout<<"ENTER TRANSFER AMOUNT:"<<endl;
+    cin>>amount;
+    transferamount(acc1,acc2,amount);
+    cout<<"AFTER TRANSFER:___________"<<endl;
+    cout<<"ACCOUNT 1:"<<endl;
+    acc1.display();
+    cout<<"ACCOUNT 2:"<<endl;
+    acc2.display();
+    return 0;
+
+
+    
 }
