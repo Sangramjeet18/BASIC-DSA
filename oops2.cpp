@@ -275,8 +275,8 @@ int main(){
     hospital::totaldisplay();
     return 0;
 }
-    */
-//ASSIGNMENT 4
+    
+//ASSIGNMENT 4________________________________________________________________________
 
 #include<iostream>
 using namespace std;
@@ -335,4 +335,65 @@ int main(){
 
 
     
+}
+    */
+class onlineorder{
+private:    
+    int customerID,quantity;
+    string productname,address,status;
+    float price;
+
+public:
+    void input(){
+        cout<<"ENTER CUSTOMER ID:"<<endl;
+        cin>>customerID;
+        cout<<"ENTER PRODUCT NAME:"<<endl;
+        cin>>productname;
+        cout<<"ENTER QUANTITY:"<<endl;
+        cin>>quantity;
+        cout<<"ENTER PRICE:"<<endl;
+        cin>>price;
+        cout<<"ENTER ADDRESS:"<<endl;
+        cin>>address;
+        cout<<"ENTER STATUS"<<endl;
+        cin>>status;
+
+    }  
+    void display(){
+        cout<<"CUSTOMER ID:"<<customerID<<endl;
+        cout<<"PRODUCT NAME:"<<productname<<endl;
+        cout<<"QUANTITY:"<<quantity<<endl;
+        cout<<"PRICE:"<<price*quantity<<endl;
+        cout<<"ADDRESS:"<<address<<endl;
+        cout<<"STATUS:"<<status<<endl;
+
+
+    }  
+    friend class deliverymanager;
+
+};   
+class deliverymanager{
+public:
+    void update(onlineorder &o){
+        cout<<"ENTER NEW DELIVERY STATUS:"<<endl;
+        cin>>o.status;
+        cout<<"ENTER NEW ADDRESS:"<<endl;
+        cin>>o.address;
+        cout<<"ENTER NEW QUANTITY:"<<endl;
+        cin>>o.quantity;
+
+    }
+};
+int main(){
+    onlineorder order;
+    deliverymanager manager;
+    order.input();
+    cout<<"BEFORE UPDETE:"<<endl;
+    order.display();
+    manager.update(order);
+    cout<<"AFTER UPDATE:"<<endl;
+    order.display();
+    return 0;
+
+
 }
