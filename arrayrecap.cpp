@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-/*int main(){
+/*int main(){             //LARGEST ELEMENT
     int n;
     cout<<"ENTER NUMBER:"<<endl;
     cin>>n;
@@ -24,8 +24,8 @@ using namespace std;
 
 
 }
-*/
-int main(){
+
+int main(){                 //LARGEST AND 2ND LARGEST ELEMENT ALSO
     int n;
     cout<<"ENTER NUMBER:"<<endl;
     cin>>n;
@@ -56,4 +56,26 @@ int main(){
     
 
 
+}
+*/
+int main(){
+    int n;
+    cout<<"ENTER NUMBER:"<<endl;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    
+    int first=0;
+    int last=n-1;
+    while(last>first){
+        swap(arr[first],arr[last]);
+        first++;
+        last--;
+    }
+    for(int i=0;i<n;i++){
+       cout<<arr[i]<<"\t";
+    }
+    return 0;
 }
