@@ -57,7 +57,7 @@ int main(){                 //LARGEST AND 2ND LARGEST ELEMENT ALSO
 
 
 }
-*/
+
 int main(){
     int n;
     cout<<"ENTER NUMBER:"<<endl;
@@ -79,3 +79,28 @@ int main(){
     }
     return 0;
 }
+    */
+int main(){
+    int n;
+    cout<<"ENTER:"<<endl;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    int start=0;
+    int end=n-1;
+    while(end>start){
+        if(arr[start]==0&&arr[end]!=0){
+            swap(arr[start],arr[end]);
+        }
+        start++;
+        end--;
+    }
+     for(int i=0;i<n;i++){
+       cout<<arr[i]<<"\t";
+    }
+    return 0;
+   
+}
+
