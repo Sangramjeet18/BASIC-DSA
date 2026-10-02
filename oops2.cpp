@@ -336,7 +336,7 @@ int main(){
 
     
 }
-    */
+    
 class onlineorder{
 private:    
     int customerID,quantity;
@@ -394,6 +394,41 @@ int main(){
     cout<<"AFTER UPDATE:"<<endl;
     order.display();
     return 0;
+
+
+}
+    */
+
+class resturantbill{
+    string customer_name;
+    int foodamount;
+    public:
+    resturantbill(string n,int f){
+        customer_name=n;
+        foodamount=f;
+    }
+    float calculatebill(float tax=5,float service=16){
+        return foodamount+(foodamount*tax/100)+service;
+    }
+        
+};   
+int main(){
+    string name;
+    float food,tax,service;
+    cout<<"NAME OF THE CUSTOMER:"<<endl;
+    cin>>name;
+    cout<<"AMOUNT OF THE FOOD:"<<endl;
+    cin>>food;
+    resturantbill b(name,food);
+    cout<<"AFTER CALCULATING BILL:"<<b.calculatebill()<<endl;
+    cout<<"USER TAX:"<<endl;
+    cin>>tax;
+    cout<<"SERVICE BILL:"<<endl;
+    cin>>service;
+    cout<<"CUSTOM BILL:"<<b.calculatebill(tax,service)<<endl;
+    return 0;
+
+
 
 
 }
