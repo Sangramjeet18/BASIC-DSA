@@ -79,7 +79,7 @@ int main(){
     }
     return 0;
 }
-    */
+    
 int main(){
     int n;
     cout<<"ENTER:"<<endl;
@@ -103,4 +103,33 @@ int main(){
     return 0;
    
 }
+*/
+int main(){
+    int n;
+    cout<<"ENTER A NUMBER:"<<endl;
+    cin>>n;
+    cout<<"ENTER ARRAY:"<<endl;
+    int arr[n];
+    int uni=0;
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    
+    for(int i=1;i<n;i++){
+        if(arr[i]!=arr[uni]){
+            uni++;
+            arr[uni]=arr[i];
 
+        }
+        
+
+
+    }
+    cout<<"SHORTED ARRAY:"<<endl;
+    for(int i=0;i<=uni;i++){
+        cout<<arr[i]<<"\t";
+    }
+
+    return 0;
+  
+}

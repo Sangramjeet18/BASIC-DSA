@@ -397,7 +397,7 @@ int main(){
 
 
 }
-    */
+    
 
 class resturantbill{
     string customer_name;
@@ -432,3 +432,12 @@ int main(){
 
 
 }
+*/
+class universitycourseclass{
+    int coursecode;
+    string coursename;
+    string facultyname;
+    int creditpoints;
+    int semester;
+    
+};    
