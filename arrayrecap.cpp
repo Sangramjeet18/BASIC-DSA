@@ -103,7 +103,7 @@ int main(){
     return 0;
    
 }
-*/
+
 int main(){
     int n;
     cout<<"ENTER A NUMBER:"<<endl;
@@ -118,7 +118,7 @@ int main(){
     for(int i=1;i<n;i++){
         if(arr[i]!=arr[uni]){
             uni++;
-            arr[uni]=arr[i];
+            arr[uni]=arr[i];    //REMEMBER
 
         }
         
@@ -132,4 +132,49 @@ int main(){
 
     return 0;
   
+}
+*/
+int main(){
+    int n;
+    cout<<"ENTER AN NUMBER:"<<endl;
+    cin>>n;
+    int arr[n];
+    cout<<"ENTER AN ARRAY:"<<endl;
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    int a;
+    int b;
+    cout<<"ENTER NUMBER A+B TO ADD:"<<endl;
+    cin>>a;
+    cin>>b;
+
+    cout<<"LET's START MATCHING:"<<endl;
+    for(int i=0;i<n;i++){
+        if(arr[i]==a+b){
+            cout<<"FOUND:"<<arr[i]<<"\t"<<"POSITION:"<<i<<endl;
+        }
+
+        
+    }
+    int x;
+    cout<<"ENTER A NUMBER TO FOUND:"<<endl;
+    cin>>x;
+    int left=0,right=n-1;
+    while(left<right){
+        int sum =arr[left]+arr[right];
+        if(sum==x){
+            cout<<"FOUND:"<<arr[left]<<"+"<<arr[right];
+            return 0;
+        }
+        else if(sum<x){
+            left++;
+        }
+        else{
+            right--;
+        }
+    }
+    cout<<"PAIR NOT FOUND"<<endl;
+    return 0;
+
 }
