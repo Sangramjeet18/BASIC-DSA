@@ -133,7 +133,7 @@ int main(){
     return 0;
   
 }
-*/
+
 int main(){
     int n;
     cout<<"ENTER AN NUMBER:"<<endl;
@@ -158,13 +158,13 @@ int main(){
         
     }
     int x;
-    cout<<"ENTER A NUMBER TO FOUND:"<<endl;
+    cout<<"ENTER A NUMBER TO FOUND:"<<endl;   
     cin>>x;
     int left=0,right=n-1;
     while(left<right){
         int sum =arr[left]+arr[right];
         if(sum==x){
-            cout<<"FOUND:"<<arr[left]<<"+"<<arr[right];
+            cout<<"FOUND:"<<arr[left]<<"+"<<arr[right];     //time complexity:- O(n^2)
             return 0;
         }
         else if(sum<x){
@@ -177,4 +177,29 @@ int main(){
     cout<<"PAIR NOT FOUND"<<endl;
     return 0;
 
+}
+*/
+#include <iostream>
+#include <unordered_set>
+using namespace std;
+
+int main() {
+    int arr[] = {2, 7, 11, 4};
+    int target = 9;
+
+    unordered_set<int> seen;
+
+    for (int i = 0; i < 4; i++) {
+        int needed = target - arr[i];
+
+        if (seen.find(needed) != seen.end()) {
+            cout << needed << " + " << arr[i] << " = " << target;
+            return 0;
+        }
+
+        seen.insert(arr[i]);
+    }
+
+    cout << "Pair not found";
+    return 0;
 }
