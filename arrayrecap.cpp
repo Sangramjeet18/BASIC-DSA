@@ -203,7 +203,7 @@ int main() {
     cout << "Pair not found";
     return 0;
 }
-    */
+    
    #include <unordered_set>
    int main(){
     int n;
@@ -231,3 +231,21 @@ int main() {
     return 0;
 
    }
+*/
+int main(){
+    int n;
+    cout<<"ENTER:"<<endl;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    int currentsum=arr[0];
+    int maxsum=arr[0];
+    for(int i=1;i<n;i++){
+        currentsum=max(arr[i],currentsum+arr[i]);
+        maxsum=max(maxsum,currentsum);
+    }
+    cout<<"MAX SUM IS:"<<maxsum<<endl;
+    return 0;
+}
