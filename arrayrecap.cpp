@@ -231,7 +231,7 @@ int main() {
     return 0;
 
    }
-*/
+
 int main(){
     int n;
     cout<<"ENTER:"<<endl;
@@ -243,9 +243,54 @@ int main(){
     int currentsum=arr[0];
     int maxsum=arr[0];
     for(int i=1;i<n;i++){
-        currentsum=max(arr[i],currentsum+arr[i]);
+        currentsum=max(arr[i],currentsum+arr[i]);       //Kadane's Algorithm
         maxsum=max(maxsum,currentsum);
     }
     cout<<"MAX SUM IS:"<<maxsum<<endl;
     return 0;
 }
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    vector<int> prices = {8, 3, 6, 2, 7};
+
+    int minPrice = prices[0];
+    int maxProfit = 0;
+
+    for (int i = 1; i < prices.size(); i++) {
+        int profit = prices[i] - minPrice;
+
+        maxProfit = max(maxProfit, profit);
+        minPrice = min(minPrice, prices[i]);
+    }
+
+    cout << maxProfit;
+    return 0;
+}
+    */
+#include<vector>
+#include<algorithm>
+int main(){
+    int n;
+    cout<<"ENTER:"<<endl;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+
+    }
+    int minprice=arr[0];
+    int maxprofit=0;
+    for(int i=1;i<n;i++){
+        int profit=arr[i]-minprice;
+        maxprofit=max(maxprofit,profit);
+        minprice = min(minprice, arr[i]);
+
+    }
+    cout<<maxprofit;
+    return 0;
+}   
