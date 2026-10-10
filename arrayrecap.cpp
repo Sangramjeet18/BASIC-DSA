@@ -178,10 +178,10 @@ int main(){
     return 0;
 
 }
-*/
-#include <iostream>
+
+
 #include <unordered_set>
-using namespace std;
+
 
 int main() {
     int arr[] = {2, 7, 11, 4};
@@ -203,3 +203,31 @@ int main() {
     cout << "Pair not found";
     return 0;
 }
+    */
+   #include <unordered_set>
+   int main(){
+    int n;
+    cout<<"ENTER:"<<endl;
+    cin>>n;
+    int arr[n];
+    cout<<"GIVE AN ARRAY:"<<endl;
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    int target;
+    cout<<"GIVE ME A TARGET ELEMENT TO FIND:"<<endl;
+    cin>>target;
+
+    unordered_set<int> seen;
+    for(int i=0;i<n;i++){
+        int needed=target-arr[i];
+        if(seen.find(needed)!=seen.end()){
+            cout << needed << " + " << arr[i] << " = " << target;
+            return 0;
+        }
+        seen.insert(arr[i]);
+    }
+    cout << "Pair not found";
+    return 0;
+
+   }
