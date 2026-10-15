@@ -23,10 +23,10 @@ int main(){
     }
 
 }
-*/
+
 //BINARY SEARCH
 int main(){
-    int n,x;
+    int n,x,ans=-1;
     cout<<"ENTER:"<<endl;
     cin>>n;
     int arr[n];
@@ -44,6 +44,7 @@ int main(){
     while(low<=high){
         int mid=low+(high-low)/2;
         if(arr[mid]==x){
+        ans=mid;
             cout<<"FOUND:"<<mid;
              return 0;
         }
@@ -58,8 +59,11 @@ int main(){
         
     }
     cout<<"NOT FOUND";
+    cout<<ans;
     return 0;
     
 } 
+*/
+
 
     
