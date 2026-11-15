@@ -20,22 +20,42 @@ public:
         cout << "ENTER SALARY: ";
         cin >> salary;
     }
-
-    void output()
+    static int count;
+    Employee(){
+        count++;
+    }
+    void calsalary(int bonus=2000){
+       cout<<"TOTAL SALARY:"<<salary+bonus<<endl;
+    }
+    void output()const
     {
         cout << "NAME: " << name << endl;
         cout << "ID: " << ID << endl;
         cout << "SALARY: " << salary << endl;
+       
     }
+    static void displaycount(){
+        cout<<"TOTAL EMPLOYEES:"<<count<<endl;
+    }
+    
 };
+int Employee::count=0;
 
 int main()
 {
-    Employee e[3];
+    int n;
+    cout<<"GIVE EMPLOYEE COUNT:"<<endl;
+    cin>>n;
+    if(n<=0){
+        return 0;
+    }
+    Employee *e=new Employee[n];
+
+   
 
     cout << "ENTER EMPLOYEE DETAILS:\n";
 
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < n; i++)
     {
         cout << "\nEMPLOYEE: " << i + 1 << endl;
         e[i].input();
@@ -43,11 +63,14 @@ int main()
 
     cout << "\n========== EMPLOYEE RECORDS ==========\n";
 
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < n; i++)
     {
         cout << "\nEMPLOYEE: " << i + 1 << endl;
         e[i].output();
+        e[i].calsalary();
     }
+    delete []e;
+    
 
     return 0;
 }
