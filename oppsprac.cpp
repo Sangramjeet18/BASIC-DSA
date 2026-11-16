@@ -74,7 +74,7 @@ int main()
 
     return 0;
 }
-    */
+    
 class bankaccount{
     int accnum;
     double balance;
@@ -116,4 +116,33 @@ int main(){
     delete []b;
     return 0;
 
+}
+*/
+
+
+class student{
+    public:
+        int roll;
+        float marks;
+        string name;
+        student(int a, string b,float m){
+            roll=a;
+            name=b;
+            marks=m;
+        }
+        void display(){
+            cout<<"NAME:"<<name<<endl;
+            
+            cout<<"MARKS:"<<marks<<endl;
+            
+            cout<<"ROLL:"<<roll<<endl;
+          
+        }
+};
+int main(){
+    student s1(1042,"SC",85.5);
+    student s2(1043,"SD",90.5);
+    s1.display();
+    s2.display();
+    return 0;
 }
