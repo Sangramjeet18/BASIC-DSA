@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-class Employee
+/*class Employee
 {
 public:
     string name;
@@ -73,4 +73,47 @@ int main()
     
 
     return 0;
+}
+    */
+class bankaccount{
+    int accnum;
+    double balance;
+    int depo;
+    public:
+    void profile();
+    void display();
+};
+void bankaccount::profile(){
+    cout<<"PROFILE:"<<endl;
+    cin>>accnum;
+    cout<<"balance:"<<endl;
+    cin>>balance;
+    cout<<"DEPOSITE:"<<endl;
+    cin>>depo;
+}
+void bankaccount:: display(){
+   cout<<"PROFILE:"<<accnum<<endl; 
+   cout<<"BALANCE:"<<balance<<endl;
+   cout<<"DEPOSITE BALANCE:"<<balance+depo<<endl;
+}
+int main(){
+    int n;
+    cout<<"PERSON:"<<endl;
+    cin>>n;
+    if(n<=0){
+        return 0;
+    }
+    bankaccount *b= new bankaccount[n];
+    for(int i=0;i<n;i++){
+        cout<<"PROFILE "<<i+1<<endl;
+        b[i].profile();
+    }
+    cout<<"====STATEMENT===="<<endl;
+    for(int i=0;i<n;i++){
+        cout<<"DISPLAY "<<i+1<<endl;
+        b[i].display();
+    }
+    delete []b;
+    return 0;
+
 }
