@@ -146,7 +146,7 @@ int main(){
     s2.display();
     return 0;
 }
-*/
+
 class number{
     public:
        int* ptr;
@@ -172,4 +172,48 @@ int main(){
     n2.display();
     return 0;
 
+}
+*/
+#include <iostream>
+using namespace std;
+
+class Result;  // Forward declaration
+
+class Student {
+private:
+    int marks;
+
+public:
+    Student() {
+        marks = 90;
+    }
+
+    friend void add(Student, Result);
+};
+
+class Result {
+private:
+    int y;
+
+public:
+    Result() {
+        y = 10;
+    }
+
+    friend void add(Student, Result);
+};
+
+// Friend function definition
+void add(Student a, Result b) {
+    cout << "TOTAL MARKS: "
+         << a.marks + b.y << endl;
+}
+
+int main() {
+    Student obj1;
+    Result obj2;
+
+    add(obj1, obj2);
+
+    return 0;
 }
