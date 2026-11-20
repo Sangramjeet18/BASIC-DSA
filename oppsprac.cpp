@@ -117,7 +117,7 @@ int main(){
     return 0;
 
 }
-*/
+
 
 
 class student{
@@ -145,4 +145,31 @@ int main(){
     s1.display();
     s2.display();
     return 0;
+}
+*/
+class number{
+    public:
+       int* ptr;
+       number(int x){
+        ptr=new int(x);
+       }
+       number(const number& n){
+    ptr=new int(*n.ptr);}
+    ~number(){
+        delete ptr;
+    }
+void display(){
+    cout<<*ptr<<endl;
+}
+};
+int main(){
+    number n1(50);
+    number n2=n1;
+    *n2.ptr=100;
+    cout<<"n1=";
+    n1.display();
+    cout<<"n2=";
+    n2.display();
+    return 0;
+
 }
