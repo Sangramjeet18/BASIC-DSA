@@ -173,9 +173,8 @@ int main(){
     return 0;
 
 }
-*/
-#include <iostream>
-using namespace std;
+
+
 
 class Result;  // Forward declaration
 
@@ -216,4 +215,41 @@ int main() {
     add(obj1, obj2);
 
     return 0;
+}
+    */
+class b;
+class a{
+    private:
+    int x;
+    public:
+    a(){
+        x=50;
+    }
+    friend void max(a,b);
+};
+class b{
+    private:
+    int y;
+    public:
+    b() {
+        y=100;
+    }
+    friend void max (a,b);
+
+};
+void max(a A,b B){
+    if(A.x>B.y){
+        cout<<"A IS GREATER:"<<A.x<<endl;
+
+    }
+    else{
+        cout<<"B IS GREATER:"<<B.y<<endl;
+    }
+}
+int main(){
+    a obj1;
+    b obj2;
+    max(obj1,obj2);
+    return 0;
+
 }
